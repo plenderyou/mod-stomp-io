@@ -145,7 +145,7 @@ public class StompClientBusMod extends BusModBase implements Handler<Message<Jso
                     }
 
                     // compose the listening address as base + destination
-                    final String vertxChannel = baseAddress + destination;
+                    final String vertxChannel = subscribeId + destination;
                     stompSubscriptions.registerSubscribeHandler(subscribeId, new Handler<Frame>() {
                         @Override
                         public void handle(Frame reply) {
